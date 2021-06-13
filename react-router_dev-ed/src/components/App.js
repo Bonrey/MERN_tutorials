@@ -1,20 +1,28 @@
 import React from 'react';
 import '../sass/index.scss';
-import styles from '../sass/App.module.scss';
-
 import Nav from './Nav';
 import About from './About';
-import Shop from './Shop';
-
+import Countries from './Countries';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div>
-      <h1 className={styles.MainHeading}>Application</h1>
-      <Nav />
-      <About />
-      <Shop />
-    </div>
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/about' component={About} />
+          <Route path='/shop' component={Countries} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
+const HomePage = () => {
+  return <h1>We're home!</h1>;
+}
+
+
 export default App;
