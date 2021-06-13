@@ -1,0 +1,14 @@
+{
+  "name": "node_tutorial",
+  "version": "1.0.0",
+  "description": "nodejs tutorial",
+  "main": "app.js",
+  "scripts": {
+    "launch": "nodemon http.js"
+  },
+  "author": "bonrey",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
