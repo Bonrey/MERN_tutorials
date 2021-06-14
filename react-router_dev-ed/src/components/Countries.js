@@ -8,7 +8,7 @@ const Countries = () => {
     const fetchAll = async () => {
       const resp = await fetch('https://restcountries.eu/rest/v2/all');
       const allCountries = await resp.json();
-      setCountries(allCountries.slice(30, 45));
+      setCountries(allCountries);
     }
     fetchAll();
   }, []);
