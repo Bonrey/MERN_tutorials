@@ -3,6 +3,7 @@ import '../sass/index.scss';
 import Nav from './Nav';
 import About from './About';
 import Countries from './Countries';
+import CountryDetail from './CountryDetail';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
         <Switch>
           <Route path='/' exact component={HomePage} />
           <Route path='/about' component={About} />
-          <Route path='/shop' component={Countries} />
+          <Route path='/countries' exact component={Countries} />
+          <Route path='/countries/:alpha3Code' component={CountryDetail} />
         </Switch>
       </div>
     </Router>

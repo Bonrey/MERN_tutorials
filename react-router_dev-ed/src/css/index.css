@@ -31,16 +31,14 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-  }
-
-  li {
-    padding: 0 1rem;
-  }
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+.nav-links li {
+  padding: 0 1rem;
 }
 
 main {

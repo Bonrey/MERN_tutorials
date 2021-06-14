@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const fetchItems = async () => {
-  const data = await fetch('https://restcountries.eu/rest/v2/all');
-  return (await data.json()).slice(35, 45);
-}
-
-const Shop = () => {
+const Countries = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const items = await fetchItems();
-      setCountries(items);
+    const fetchAll = async () => {
+      const resp = await fetch('https://restcountries.eu/rest/v2/all');
+      const allCountries = await resp.json();
+      setCountries(allCountries.slice(30, 45));
     }
-    fetchData();
+    fetchAll();
   }, []);
 
   return (
-    <div>
+    <main>
       <h1>Countries page</h1>
       {countries.map(country => (
-        <h2 style={{margin: "1rem 0"}} key={country.name}>{country.name}</h2>
+        <h2 style={{ margin: "1rem 0" }} key={country.name}>
+          <Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/countries/${country.alpha3Code}`}>{country.name}</Link>
+        </h2>
       ))}
-    </div>
+    </main>
   );
 }
-export default Shop;
+export default Countries;
