@@ -1,0 +1,30 @@
+GET http://localhost:3000/countries
+
+###
+
+GET http://localhost:3000/countries/60ce2f1129f9b9349c37b676
+
+###
+
+POST http://localhost:3000/countries
+Content-Type: application/json
+
+{
+  "name": "Germany",
+  "language": "German",
+  "population": 83
+}
+
+###
+
+DELETE http://localhost:3000/countries/60ce316c29f9b9349c37b67a
+
+###
+
+PATCH http://localhost:3000/countries/60ce33dd83468d33004e5216
+Content-Type: application/json
+
+{
+  "name": "Africa"
+}
+
